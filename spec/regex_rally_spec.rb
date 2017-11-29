@@ -132,19 +132,4 @@ describe "Working with Regular expressions" do
     end
   end
 
-  context "The scan method" do
-    it "matches valid US phone numbers regardless of format" do
-      my_regex = //
-      match = ["702-386-5397", "2128675309", "(212) 867-5309"]
-      do_not_match = ["123", "this isn't a number", "12345678900000", "abcdefghij", "123456789a"]
-
-      match.each do |word|
-        expect(word.scan(my_regex).length).to eq(10)
-      end
-
-      do_not_match.each do |word|
-        expect(word.scan(my_regex).length).to_not eq(10)
-      end
-    end
-  end
 end
